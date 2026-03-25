@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+:root {
+  --lrn-navy: #1a2b4a;
+  --lrn-teal: #00a99d;
+  --lrn-gold: #f5a623;
+  --lrn-light: #f5f7fa;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #f5f7fa; }
+#root { width: 100%; max-width: 100%; text-align: left; }
