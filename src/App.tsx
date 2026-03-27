@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
 import UploadPolicy from "./pages/UploadPolicy";
@@ -9,7 +9,7 @@ import PublishPolicy from "./pages/PublishPolicy";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Dashboard />} />
@@ -18,6 +18,7 @@ export default function App() {
           <Route path="changes" element={<ChangeTracking />} />
           <Route path="stakeholders" element={<StakeholderReview />} />
           <Route path="publish" element={<PublishPolicy />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>
